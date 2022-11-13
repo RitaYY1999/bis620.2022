@@ -35,43 +35,6 @@ test_that(
   }
 )
 
-test_that(
-  "The hello() returns Hello! for empty input.",
-  {
-    expect_equal(hello(), "Hello!")
-  }
-)
 
-test_that(
-  "The hello() returns Hello name ! for input = name.",
-  {
-    expect_equal(hello("World"), "Hello World!")
-  }
-)
 
-test_that(
-  "The hello(name, invisible=TRUE) returns a invisible object.",
-  {
-    expect_invisible(hello("World", invisible = TRUE))
-  }
-)
 
-test_that(
-  "The spectral_signature() returns a data frame.",
-  {
-    data(ukb_accel)
-    s <- spectral_signature(ukb_accel[1:100, ])
-    expect_s3_class(s, "data.frame")
-  }
-)
-
-test_that(
-  "The spectral_signature(x, take_log = TRUE) takes
-  the log of the modulus be taken.",
-  {
-    data(ukb_accel)
-    s <- spectral_signature(ukb_accel[1:100, ], take_log = TRUE)
-    n <- spectral_signature(ukb_accel[1:100, ])
-    expect_equal(s[, 1:3], log(n)[, 1:3])
-  }
-)
