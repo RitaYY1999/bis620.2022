@@ -20,7 +20,7 @@ test_that(
   {
     data(ukb_accel)
     p <- accel_plot(ukb_accel[1:100, ])
-    vdiffr:: expect_doppelganger("first-100-samples-time", p) # a svg comparison
+    vdiffr:: expect_doppelganger("first-100-samples-time", p)
   }
 )
 
@@ -29,6 +29,6 @@ test_that(
   {
     data(ukb_accel)
     p <- accel_plot(spectral_signature(ukb_accel[1:100, ]))
-    vdiffr:: expect_doppelganger("first-100-samples-freq", p) # a svg comparison
+    vdiffr:: expect_doppelganger("first-100-samples-freq", p)
   }
 )
