@@ -14,6 +14,12 @@ coverage](https://codecov.io/gh/RitaYY1999/bis620.2022/branch/main/graph/badge.s
 
 The goal of bis620.2022 is to …
 
+You can check the link result through this link:
+<https://github.com/RitaYY1999/bis620.2022/actions/workflows/lint.yaml>.
+
+You can check the test coverage result through this link:
+<https://app.codecov.io/gh/RitaYY1999/bis620.2022?branch=main>.
+
 ## Installation
 
 You can install the development version of bis620.2022 from
