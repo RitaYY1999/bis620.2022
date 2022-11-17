@@ -16,7 +16,7 @@ coverage](https://codecov.io/gh/RitaYY1999/bis620.2022/branch/main/graph/badge.s
 
 bis620.2022 contains the R functions, test files and test coverage used
 for analyze
-[“ukb_accel”](https://github.com/RitaYY1999/bis620.2022/tree/main/data)
+[`ukb_accel`](https://github.com/RitaYY1999/bis620.2022/tree/main/data)
 data in BIS620 (FALL 2022) course at Yale University. After installing
 and loading the package, users will be able to reproduce the same
 results from their local computers using the corresponding R command and
@@ -35,12 +35,13 @@ devtools::install_github("RitaYY1999/bis620.2022")
 You can use the package by:
 
 ``` r
+install.packages("bis620.2022")
 library(bis620.2022)
 ```
 
 ## Usage
 
--   To write “hello,YY” to the console, you can use `hello()` function:
+-   To write “hello,yy” to the console, you can use `hello()` function:
 
 ``` r
 hello("yy")
@@ -54,7 +55,7 @@ data(ukb_accel)
 accel_plot(ukb_accel[1:1000,])
 ```
 
-accel_plot can plot not only data with “time” column but also with
+`accel_plot()` can plot not only data with “time” column but also with
 “freq” column For example, you can plot frequency data by:
 
 ``` r
@@ -67,8 +68,7 @@ accel_plot(spectral_signature(ukb_accel[1:1000,]))
 
 ``` r
 spectral_signature(ukb_accel[1:1000,])
-# The spectral signature is calculated by taking the modulus of the
-# Fourier coefficients of the signal.
+# The spectral signature is calculated by taking the modulus of the fourier coefficients of the signal.
 ```
 
 ## Useful Link
