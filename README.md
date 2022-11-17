@@ -12,15 +12,17 @@
 coverage](https://codecov.io/gh/RitaYY1999/bis620.2022/branch/main/graph/badge.svg)](https://app.codecov.io/gh/RitaYY1999/bis620.2022?branch=main)
 <!-- badges: end -->
 
-The goal of bis620.2022 is to …
+## Description
 
-You can check the link result through this link:
-<https://github.com/RitaYY1999/bis620.2022/actions/workflows/lint.yaml>.
+bis620.2022 contains the R functions, test files and test coverage used
+for analyze
+[“ukb_accel”](https://github.com/RitaYY1999/bis620.2022/tree/main/data)
+data in BIS620 (FALL 2022) course at Yale University. After installing
+and loading the package, users will be able to reproduce the same
+results from their local computers using the corresponding R command and
+data set.
 
-You can check the test coverage result through this link:
-<https://app.codecov.io/gh/RitaYY1999/bis620.2022?branch=main>.
-
-## Installation
+## Getting Started
 
 You can install the development version of bis620.2022 from
 [GitHub](https://github.com/) with:
@@ -30,38 +32,55 @@ You can install the development version of bis620.2022 from
 devtools::install_github("RitaYY1999/bis620.2022")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
+You can use the package by:
 
 ``` r
 library(bis620.2022)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+## Usage
+
+-   To write “hello,YY” to the console, you can use `hello()` function:
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+hello("yy")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
+-   To plot UKBiobank Accelerometry Data, you can use `accel_plot()`
+    function:
 
-You can also embed plots, for example:
+``` r
+data(ukb_accel)
+accel_plot(ukb_accel[1:1000,])
+```
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+accel_plot can plot not only data with “time” column but also with
+“freq” column For example, you can plot frequency data by:
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+data(ukb_accel)
+accel_plot(spectral_signature(ukb_accel[1:1000,]))
+```
+
+-   To get the Spectral Signature of Accelerometry Data, you can use
+    `spectral_signature()` function:
+
+``` r
+spectral_signature(ukb_accel[1:1000,])
+# The spectral signature is calculated by taking the modulus of the
+# Fourier coefficients of the signal.
+```
+
+## Useful Link
+
+The package will be tested anytime it is pushed to the repository.
+
+You can check the link result through this link:
+<https://github.com/RitaYY1999/bis620.2022/actions/workflows/lint.yaml>.
+
+You can check the test coverage result through this link:
+<https://app.codecov.io/gh/RitaYY1999/bis620.2022?branch=main>.
+
+You can see the test resulting plot for `accel_plot()` function through
+this link:
+<https://github.com/RitaYY1999/bis620.2022/tree/main/tests/testthat/_snaps/plot>.
