@@ -78,6 +78,6 @@ You can check the link result through this link:
 You can check the test coverage result through this link:
 <https://app.codecov.io/gh/RitaYY1999/bis620.2022?branch=main>.
  
-You can see the test resulting plot for `accel_plot()` function through this link:
+You can see the test resulting plots for `accel_plot()` function through this link:
 <https://github.com/RitaYY1999/bis620.2022/tree/main/tests/testthat/_snaps/plot>.
 
