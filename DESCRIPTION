@@ -11,8 +11,12 @@ RoxygenNote: 7.2.1
 Imports: 
   dplyr,
   ggplot2,
+  ggpubr,
   purrr,
-  tidyr
+  tidyr,
+  dbplyr,
+  duckdb,
+  DBI
 Roxygen: list(markdown = TRUE)
 Depends: 
   R (>= 4.2)
