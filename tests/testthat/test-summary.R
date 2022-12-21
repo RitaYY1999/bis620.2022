@@ -10,7 +10,7 @@ test_that(
       inner_join(health_condition, by = "nct_id") |>select(nct_id, affected_rate, health)
     health_event$health <- as.factor(health_event$health)
     s <- summary_stats(health_event)
-    expect_snapshot(s)
+    expect_s3_class(s, "tbl_df")
   }
 
 )
@@ -32,7 +32,7 @@ test_that(
       filter(age != "other")
     age_event$age <- as.factor(age_event$age)
     s <- summary_stats(age_event)
-    expect_snapshot(s)
+    expect_s3_class(s, "tbl_df")
   }
 
 )
@@ -50,7 +50,7 @@ test_that(
       select(nct_id, affected_rate, intervention_type)
     event_intervention$intervention_type <- as.factor(event_intervention$intervention_type)
     s <- summary_stats(event_intervention)
-    expect_snapshot(s)
+    expect_s3_class(s, "tbl_df")
   }
 
 )
@@ -69,7 +69,7 @@ test_that(
       filter(!is.na(gender))
     event_gender$gender <- as.factor(event_gender$gender)
     s <- summary_stats(event_gender)
-    expect_snapshot(s)
+    expect_s3_class(s, "tbl_df")
   }
 
 )

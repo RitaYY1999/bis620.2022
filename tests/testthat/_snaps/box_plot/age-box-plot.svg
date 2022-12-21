@@ -75,7 +75,7 @@
 <line x1='173.25' y1='395.13' x2='173.25' y2='251.30' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: butt;' />
 <line x1='173.25' y1='491.64' x2='173.25' y2='491.64' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: butt;' />
 <polygon points='100.45,395.13 100.45,491.64 246.04,491.64 246.04,395.13 100.45,395.13 ' style='stroke-width: 1.07; stroke: #F8766D; stroke-linecap: butt; stroke-linejoin: miter; fill: #FFFFFF;' />
-<line x1='100.45' y1='462.28' x2='246.04' y2='462.28' style='stroke-width: 2.13; stroke: #F8766D; stroke-linecap: butt; stroke-linejoin: miter;' />
+<line x1='100.45' y1='462.22' x2='246.04' y2='462.22' style='stroke-width: 2.13; stroke: #F8766D; stroke-linecap: butt; stroke-linejoin: miter;' />
 <circle cx='381.24' cy='133.08' r='1.95' style='stroke-width: 0.71; stroke: #00BA38; fill: #00BA38;' />
 <circle cx='381.24' cy='136.98' r='1.95' style='stroke-width: 0.71; stroke: #00BA38; fill: #00BA38;' />
 <circle cx='381.24' cy='136.98' r='1.95' style='stroke-width: 0.71; stroke: #00BA38; fill: #00BA38;' />
