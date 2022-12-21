@@ -1,13 +1,15 @@
 ---
 title: "bis620"
+format:
+  author: Chengxi Wang cw973 & Yun Yang yy643
 output: rmarkdown::html_vignette
-#output: pdf_document
 vignette: >
   %\VignetteIndexEntry{bis620}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
+### Author: Chengxi Wang cw973 & Yun Yang yy643
 
 ```{r, include = FALSE}
 devtools::load_all()
