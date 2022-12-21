@@ -2,9 +2,8 @@
 test_that(
   "The mean_plot() returns a mean plot of adverse event affected rates for health conditions.",
   {
-    con = dbConnect(duckdb(file.path("/Users/ritay/Desktop/BIS620/bis620.2022/vignettes/ctrialsgovdb/ctrialsgov.duckdb")))
-    re = tbl(con, "reported_event_totals")
-    eg = tbl(con, "eligibilities")
+    re = read.table(file.path("reported_event_totals.txt"), sep="|", quote="", comment.char="", header = TRUE)
+    eg = read.table(file.path("eligibilities.txt"), sep="|", quote="", comment.char="", fill = TRUE, header = TRUE)
     df_re = event_preprocess(re)
     health_condition = as.data.frame(eg) |> select(nct_id, healthy_volunteers)|>
       mutate(health = case_when(healthy_volunteers == "No" ~ "No",healthy_volunteers == "Accepts Healthy Volunteers" ~ "Yes",TRUE ~ "Unknown")) |> filter(healthy_volunteers != "Unknown")
@@ -20,13 +19,12 @@ test_that(
 test_that(
   "The mean_plot() returns a mean plot of adverse event affected rates for age factor.",
   {
-    con = dbConnect(duckdb(file.path("/Users/ritay/Desktop/BIS620/bis620.2022/vignettes/ctrialsgovdb/ctrialsgov.duckdb")))
-    re = tbl(con, "reported_event_totals")
-    eg = tbl(con, "eligibilities")
+    re = read.table(file.path("reported_event_totals.txt"), sep="|", quote="", comment.char="", header = TRUE)
+    eg = read.table(file.path("eligibilities.txt"), sep="|", quote="", comment.char="", fill = TRUE, header = TRUE)
     df_re = event_preprocess(re)
-    age_type = as.data.frame(eg) |> mutate(age = case_when(older_adult == TRUE & child == FALSE & adult == FALSE ~ "older_adult",
-                                                           older_adult == FALSE & child == TRUE & adult == FALSE ~ "child",
-                                                           older_adult == FALSE & child == FALSE & adult == TRUE ~ "adult",
+    age_type = as.data.frame(eg) |> mutate(age = case_when(older_adult == "t" & child == "f" & adult == "f" ~ "older_adult",
+                                                           older_adult == "f" & child == "t" & adult == "f" ~ "child",
+                                                           older_adult == "f" & child == "f" & adult == "t" ~ "adult",
                                                            TRUE ~ "other"))|>
       select(nct_id, age)
     age_event = df_re |>
@@ -43,9 +41,8 @@ test_that(
 test_that(
   "The mean_plot() returns a box plot of adverse event affected rates for intervention type factor.",
   {
-    con = dbConnect(duckdb(file.path("/Users/ritay/Desktop/BIS620/bis620.2022/vignettes/ctrialsgovdb/ctrialsgov.duckdb")))
-    re = tbl(con, "reported_event_totals")
-    intervention = tbl(con, "interventions")
+    re = read.table(file.path("reported_event_totals.txt"), sep="|", quote="", comment.char="", header = TRUE)
+    intervention = read.table(file.path("interventions.txt"), sep="|", quote="", comment.char="", fill = TRUE, header = TRUE)
     df_re = event_preprocess(re)
     intervention <- as.data.frame(intervention)
     event_intervention = df_re |>
@@ -61,9 +58,8 @@ test_that(
 test_that(
   "The mean_plot() returns a mean plot of adverse event affected rates for gender factor.",
   {
-    con = dbConnect(duckdb(file.path("/Users/ritay/Desktop/BIS620/bis620.2022/vignettes/ctrialsgovdb/ctrialsgov.duckdb")))
-    re = tbl(con, "reported_event_totals")
-    eg = tbl(con, "eligibilities")
+    re = read.table(file.path("reported_event_totals.txt"), sep="|", quote="", comment.char="", header = TRUE)
+    eg = read.table(file.path("eligibilities.txt"), sep="|", quote="", comment.char="", fill = TRUE, header = TRUE)
     df_re = event_preprocess(re)
     e_gender <- as.data.frame(eg) |>
       filter(gender != "All")

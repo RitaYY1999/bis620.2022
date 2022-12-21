@@ -40,9 +40,9 @@ regression_model <- function(x, y, z, type){
     filter(affected_rate <= 1 & affected_rate >= 0)
 
   # age v.s. event
-  age_type = as.data.frame(y) |> mutate(age = case_when(older_adult == TRUE & child == FALSE & adult == FALSE ~ "older_adult",
-                                                         older_adult == FALSE & child == TRUE & adult == FALSE ~ "child",
-                                                         older_adult == FALSE & child == FALSE & adult == TRUE ~ "adult",
+  age_type = as.data.frame(y) |> mutate(age = case_when(older_adult == "t" & child == "f" & adult == "f" ~ "older_adult",
+                                                         older_adult == "f" & child == "t" & adult == "f" ~ "child",
+                                                         older_adult == "f" & child == "f" & adult == "t" ~ "adult",
                                                          TRUE ~ "other"))|>
     select(nct_id, age)
 
